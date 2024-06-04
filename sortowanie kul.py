@@ -66,3 +66,4 @@ if __name__ == "__main__":
     print(wczytywanie_kolumny(i))
     print(sprawdzanie_czy_kol_rozwiazana(kolumna))
     #pkt_koloru(wczytaj_do1listy(nazwa),)
+    #test
