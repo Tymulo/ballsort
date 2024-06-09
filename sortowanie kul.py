@@ -58,14 +58,12 @@ def najm_pkt(T,lista_kolorow):
 if __name__ == "__main__":
     nazwa = "kule.txt"
     ilosc_kolumn(nazwa)
-    print(wczytaj_do1listy(nazwa))
-    b =(ilosc_rodz_kul(wczytaj_do1listy(nazwa)))
-    print(b)
-    i = 1
-    kolumna = wczytywanie_kolumny(i)
-    max_dlg_kol(kolumna)
-    print(wczytywanie_kolumny(i))
-    print(sprawdzanie_czy_kol_rozwiazana(kolumna))
-    pkt_koloru(wczytaj_do1listy(nazwa),b,)
-    #test2
-    
+    wszystkie_kule=(wczytaj_do1listy(nazwa))
+    rodz =(ilosc_rodz_kul(wczytaj_do1listy(nazwa)))
+    m_dlg = max_dlg_kol(wczytywanie_kolumny(1))
+    for i in range(m_dlg):
+        kolumna = wczytywanie_kolumny(i)
+        print(sprawdzanie_czy_kol_rozwiazana(kolumna))
+    pkt=pkt_koloru(wczytaj_do1listy(nazwa),rodz,m_dlg )
+    print(pkt)
+    print(rodz)
