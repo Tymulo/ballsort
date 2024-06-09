@@ -52,11 +52,14 @@ def najm_pkt(T,lista_kolorow):
     i = T.index(min(T))
     kolor_kuli = lista_kolorow[i]
     return kolor_kuli
-def kolumna_min_pkt(kolumna,najm_kolor,nr_kolumny):
-    if kolumna[-1] == najm_kolor:
-        return nr_kolumny
-#def wypelnianie_pustej(kolumna):
-#    if kolumna_pusta(kolumna) == True:
+# def wypelnianie_pustej(kolumna,m_dlg,najm_kolor):
+#     if kolumna_pusta(kolumna) == True:
+#         for i in range(m_dlg):
+#             kolumna = wczytywanie_kolumny(i)
+#             if dlg_kol(kolumna)>0:
+#                 if kolumna[0] ==najm_kolor:
+#                     kolumna_pusta(kolumna).append(kolumna[0])
+#                     kolumna.remove(kolumna[0])
 if __name__ == "__main__":
     nazwa = "kule.txt"
     ilosc_kolumn(nazwa)
@@ -67,9 +70,6 @@ if __name__ == "__main__":
     najm_kolor = najm_pkt(pkt,rodz)
     for i in range(m_dlg):
         kolumna = wczytywanie_kolumny(i)
-        if dlg_kol(kolumna)>0:
-            min_pkt =kolumna_min_pkt(kolumna,najm_kolor,i)
-        print(min_pkt)
         print(sprawdzanie_czy_kol_rozwiazana(kolumna))
     print(najm_kolor)
     print(pkt)
