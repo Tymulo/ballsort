@@ -16,14 +16,14 @@ def wczytywanie_kolumny(numer_kolumny):
         linia = plik.readlines()[numer_kolumny]
         kolumna = linia.strip().split()
     return kolumna
-def ilosc_rodz_kul(lista_wszystkich):
+def lista_kolorow(lista_wszystkich):
     lista_kolorow = []
     for i in lista_wszystkich:
         if i not in lista_kolorow:
             lista_kolorow.append(i)
     return lista_kolorow
 def sprawdzanie_czy_kol_rozwiazana(kolumna):
-    if len(ilosc_rodz_kul(kolumna)) == 1:
+    if len(lista_kolorow(kolumna)) == 1:
         print("kolumna ",i," rozwiązana")
         return True
     else:
@@ -34,9 +34,9 @@ def kolumna_pusta(kolumna):
         return True
     else:
         return False
-def max_dlg_kol(kolumna1):
-    m_dlg_kol = len(kolumna1)
-    return m_dlg_kol
+def dlg_kol(kolumna1):
+    dlg = len(kolumna1)
+    return dlg
 def pkt_koloru(lista_wszystkich,lista_kolorow,m_dlg_kol):
     T=[]
     b = 0
@@ -52,18 +52,25 @@ def najm_pkt(T,lista_kolorow):
     i = T.index(min(T))
     kolor_kuli = lista_kolorow[i]
     return kolor_kuli
-#def wypelnianie_pustej(kolumna,numer_kolumny):
+def kolumna_min_pkt(kolumna,najm_kolor,nr_kolumny):
+    if kolumna[-1] == najm_kolor:
+        return nr_kolumny
+#def wypelnianie_pustej(kolumna):
 #    if kolumna_pusta(kolumna) == True:
-        
 if __name__ == "__main__":
     nazwa = "kule.txt"
     ilosc_kolumn(nazwa)
     wszystkie_kule=(wczytaj_do1listy(nazwa))
-    rodz =(ilosc_rodz_kul(wczytaj_do1listy(nazwa)))
-    m_dlg = max_dlg_kol(wczytywanie_kolumny(1))
+    rodz =(lista_kolorow(wczytaj_do1listy(nazwa)))
+    m_dlg = dlg_kol(wczytywanie_kolumny(1))
+    pkt=pkt_koloru(wczytaj_do1listy(nazwa),rodz,m_dlg )
+    najm_kolor = najm_pkt(pkt,rodz)
     for i in range(m_dlg):
         kolumna = wczytywanie_kolumny(i)
+        if dlg_kol(kolumna)>0:
+            min_pkt =kolumna_min_pkt(kolumna,najm_kolor,i)
+        print(min_pkt)
         print(sprawdzanie_czy_kol_rozwiazana(kolumna))
-    pkt=pkt_koloru(wczytaj_do1listy(nazwa),rodz,m_dlg )
+    print(najm_kolor)
     print(pkt)
     print(rodz)
