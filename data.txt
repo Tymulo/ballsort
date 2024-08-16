@@ -1,0 +1,11 @@
+pink lime blue red gray
+pink pink red blue green
+lime lime pink green pink
+orange purple purple orange blue
+blue green light_blue purple gray
+green lime green blue orange
+light_blue light_blue orange light_blue red
+light_blue purple red red lime
+gray gray orange purple gray
+
+
