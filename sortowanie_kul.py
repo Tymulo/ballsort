@@ -93,7 +93,7 @@ def empty_col_color(pos_of_balls, mxcllght, color_list):
             ball_color = higst_pts(crpts, color_list)
     return pos_of_balls
 
-
+4r2tfggt53y
 # def sorting_balls(pos_of_balls, mxcllght, color_list):
 #     for a in range(len(color_list)):
 #         crpts = balls_points(pos_of_balls, color_list)
